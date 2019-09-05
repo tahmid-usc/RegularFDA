@@ -16,11 +16,11 @@ source('Codes/rbfmatern32.R')
 
 source('Codes/matern52rbf.R')
 source('Codes/matern52aplace.R')
-source('Codes/matern52ematern32.R')
+source('Codes/matern52matern32.R')
 
 source('Codes/matern32rbf.R')
 source('Codes/matern32lap.R')
-source('Codes/matern32ematern52.R')
+source('Codes/matern32matern52.R')
 
 
 source('Codes/multistart.R')

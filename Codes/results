@@ -122,3 +122,60 @@ Pred     G1 NonG1
 
 # matern 32 laplace
 
+table(Pred = classpred, True = mdt$phase)
+       True
+Pred     G1 NonG1
+  G1    214   155
+  NonG1   8   235
+> 
+> conf <- table(Pred = classpred, True = mdt$phase)
+> sum(diag(conf))/sum(conf)
+[1] 0.7336601
+
+
+# matern32 matern 52
+
+ table(Pred = classpred, True = mdt$phase)
+       True
+Pred     G1 NonG1
+  G1    188    45
+  NonG1  34   345
+> 
+> conf <- table(Pred = classpred, True = mdt$phase)
+> sum(diag(conf))/sum(conf)
+[1] 0.870915
+
+
+#matern52 rbf
+
+      True
+Pred     G1 NonG1
+  G1    188    47
+  NonG1  34   343
+> 
+> conf <- table(Pred = classpred, True = mdt$phase)
+> sum(diag(conf))/sum(conf)
+[1] 0.8676471
+
+# matern52 laplace
+
+      True
+Pred     G1 NonG1
+  G1    214   155
+  NonG1   8   235
+> 
+> conf <- table(Pred = classpred, True = mdt$phase)
+> sum(diag(conf))/sum(conf)
+[1] 0.7336601
+
+
+# matern52 matern 32
+
+      True
+Pred     G1 NonG1
+  G1    188    44
+  NonG1  34   346
+> 
+> conf <- table(Pred = classpred, True = mdt$phase)
+> sum(diag(conf))/sum(conf)
+[1] 0.872549

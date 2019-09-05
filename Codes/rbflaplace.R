@@ -1,8 +1,7 @@
-## laplace kernel with matern52 error
-
+## RBF kernel laplace
 ker1 <- function(x, theta, jitter = .00000001) {
   m <- length(x)
-  k1ker <- laplacedot(sigma = 1/theta[1])
+  k1ker <- rbfdot(sigma = 1/theta[1])
   k1 <- theta[2] * kernelMatrix(k1ker, x = x)
   k1 <- k1 + jitter * diag(m)
   return(k1)
@@ -17,7 +16,8 @@ ker2 <- function(x, theta) {
 
 
 covker <- function(x, y, theta) {
-  rbf <- laplacedot(sigma = 1/theta[1])
+  rbf <- rbfdot(sigma = 1/theta[1])
   covker <- theta[2] * kernelMatrix(rbf, x = x, y = y)
   return(covker)
 }
+

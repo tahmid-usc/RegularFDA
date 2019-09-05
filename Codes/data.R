@@ -23,11 +23,13 @@ sel <- sample(1:dim(mdt)[1], 300)
 
 train <- split(mdt, mdt$phase, drop = T)
 
-x <- seq(0,1, length.out = 18)
+x <- seq(0,119, length.out = 18)
 
 par(mfrow = c(2,1))
-plot(x, train$G1[1,2:19], type = 'b', ylim = c(min(train$G1[,2:19]), max(train$G1[,2:19])), col = 'gray30')
-apply(train$G1[,2:19], 1, function(y) {lines(x, y, type = 'b', col = 'gray30')})
-plot(x, train$G1[1,2:19], type = 'b', ylim = c(min(train$G1[,2:19]), max(train$NonG1[,2:19])), col = 'gray30')
-apply(train$NonG1[,2:19], 1, function(y) {lines(x, y, type = 'b', col = 'gray30')})
+plot(x, train$G1[1,2:19], type = 'b', ylim = c(min(train$G1[,2:19]), max(train$G1[,2:19])), col = 'gray30', cex = .5,
+     xlab = 'Time (mins)', ylab = 'Expression', main = 'G1')
+apply(train$G1[,2:19], 1, function(y) {lines(x, y, type = 'b', col = 'gray30', cex = .5)})
+plot(x, train$G1[1,2:19], type = 'b', ylim = c(min(train$G1[,2:19]), max(train$NonG1[,2:19])), col = 'gray30', cex = .5,
+     xlab = 'Time (mins)', ylab = 'Expression', main = 'Non-G1')
+apply(train$NonG1[,2:19], 1, function(y) {lines(x, y, type = 'b', col = 'gray30', cex = .5)})
 

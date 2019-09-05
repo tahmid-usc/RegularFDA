@@ -1,4 +1,4 @@
-## Matern 3/2 
+## Matern 3/2 laplace
 
 
 ker1 <- function(x, theta, jitter = .00000001) {
@@ -11,9 +11,8 @@ ker1 <- function(x, theta, jitter = .00000001) {
 
 
 ker2 <- function(x, theta) {
-  m <- length(x)
-  r <- as.matrix(dist(x))
-  k2 <- theta[4] * (1 + (sqrt(3) * r / theta[3])) * exp(- sqrt(3) * r /theta[3])
+  k2ker <- laplacedot(sigma = 1/theta[3]) 
+  k2 <- theta[4] * kernelMatrix(k2ker, x = x) 
   return(k2)
 }
 

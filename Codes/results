@@ -1,0 +1,124 @@
+#rbf rbf
+
+able(Pred = classpred, True = mdt$phase)
+       True
+Pred     G1 NonG1
+  G1    188    46
+  NonG1  34   344
+> 
+> conf <- table(Pred = classpred, True = mdt$phase)
+> sum(diag(conf))/sum(conf)
+[1] 0.869281
+  
+ #lap lap 
+         True
+Pred     G1 NonG1
+  G1    214   160
+  NonG1   8   230
+  
+  sum(diag(conf))/sum(conf)
+[1] 0.7254902
+
+#mater52
+
+       True
+Pred     G1 NonG1
+  G1    188    45
+  NonG1  34   345
+> 
+> conf <- table(Pred = classpred, True = mdt$phase)
+> sum(diag(conf))/sum(conf)
+[1] 0.870915
+
+#matern 32
+
+       True
+Pred     G1 NonG1
+  G1    188    45
+  NonG1  34   345
+> 
+> conf <- table(Pred = classpred, True = mdt$phase)
+> sum(diag(conf))/sum(conf)
+[1] 0.870915
+
+#laprbf
+
+       True
+Pred     G1 NonG1
+  G1    188    48
+  NonG1  34   342
+> 
+> conf <- table(Pred = classpred, True = mdt$phase)
+> sum(diag(conf))/sum(conf)
+[1] 0.8660131
+
+@lap matern52
+
+       True
+Pred     G1 NonG1
+  G1    188    46
+  NonG1  34   344
+> 
+> conf <- table(Pred = classpred, True = mdt$phase)
+> sum(diag(conf))/sum(conf)
+[1] 0.869281
+
+
+#lap matern 32
+
+      True
+Pred     G1 NonG1
+  G1    188    46
+  NonG1  34   344
+> 
+> conf <- table(Pred = classpred, True = mdt$phase)
+> sum(diag(conf))/sum(conf)
+[1] 0.869281
+
+#rbf laplace
+
+      True
+Pred     G1 NonG1
+  G1    210   155
+  NonG1  12   235
+> 
+> conf <- table(Pred = classpred, True = mdt$phase)
+> sum(diag(conf))/sum(conf)
+[1] 0.7271242
+
+#rbf matern 52
+
+      True
+Pred     G1 NonG1
+  G1    188    44
+  NonG1  34   346
+> 
+> conf <- table(Pred = classpred, True = mdt$phase)
+> sum(diag(conf))/sum(conf)
+[1] 0.872549
+
+# rbf matern32
+
+table(Pred = classpred, True = mdt$phase)
+       True
+Pred     G1 NonG1
+  G1    188    44
+  NonG1  34   346
+> 
+> conf <- table(Pred = classpred, True = mdt$phase)
+> sum(diag(conf))/sum(conf)
+[1] 0.872549
+
+# matern 32 rbf
+
+       True
+Pred     G1 NonG1
+  G1    188    48
+  NonG1  34   342
+> 
+> conf <- table(Pred = classpred, True = mdt$phase)
+> sum(diag(conf))/sum(conf)
+[1] 0.8660131
+
+# matern 32 laplace
+

@@ -1,4 +1,4 @@
-## Matern 3/2 
+## Matern 3/2 rbf
 
 
 ker1 <- function(x, theta, jitter = .00000001) {
@@ -9,14 +9,11 @@ ker1 <- function(x, theta, jitter = .00000001) {
   return(k1)
 }
 
-
 ker2 <- function(x, theta) {
-  m <- length(x)
-  r <- as.matrix(dist(x))
-  k2 <- theta[4] * (1 + (sqrt(3) * r / theta[3])) * exp(- sqrt(3) * r /theta[3])
+  k2ker <- rbfdot(sigma = 1/theta[3])
+  k2 <- theta[4] * kernelMatrix(k2ker, x = x) 
   return(k2)
 }
-
 
 covker <- function(x, y, theta) {
   r <- abs(outer(x, y, "-"))

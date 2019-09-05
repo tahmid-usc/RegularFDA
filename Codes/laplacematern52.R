@@ -10,8 +10,9 @@ ker1 <- function(x, theta, jitter = .00000001) {
 
 
 ker2 <- function(x, theta) {
-  k2ker <- laplacedot(sigma = 1/theta[3]) 
-  k2 <- theta[4] * kernelMatrix(k2ker, x = x) 
+  m <- length(x)
+  r <- as.matrix(dist(x))
+  k2 <- theta[4] * (1 + (sqrt(5) * r / theta[3]) + ((5 * r^2) / (3 * theta[3]^2))) * exp(- sqrt(5) * r / theta[3])
   return(k2)
 }
 
